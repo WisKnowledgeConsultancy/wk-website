@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nav-link {
+  @apply text-[#234292] font-semibold text-base hover:text-[#3175d7] transition-colors duration-200;
+}
