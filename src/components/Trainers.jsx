@@ -11,13 +11,13 @@ const trainers = [
       "25+ years of expertise helping students achieve Band 7+ in IELTS with proven strategies and mentorship.",
     image: "/male.jpeg",
   },
-  {
-    name: "Dr. Nishwa",
-    title: "Summer Camp Trainer",
-    description:
-      "Guides young learners with interactive summer programs to develop their communication and soft skills.",
-    image: "/female.jpeg",
-  },
+  // {
+  //   name: "Dr. Nishwa",
+  //   title: "Summer Camp Trainer",
+  //   description:
+  //     "Guides young learners with interactive summer programs to develop their communication and soft skills.",
+  //   image: "/female.jpeg",
+  // },
 ];
 
 export default function Trainers() {
