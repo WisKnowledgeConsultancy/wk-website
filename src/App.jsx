@@ -16,6 +16,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import AOSRefresher from "./components/AOSRefresher"; 
 import TrainerProfile from "./components/TrainerProfile"; // ✅ add
+import ScrollToTop from "./components/ScrollToTop"; // ✅ add
 
 function App() {
   useEffect(() => {
@@ -29,41 +30,42 @@ function App() {
   return (
     <div className="main-bg" role="document">
       <Navbar />
+      <ScrollToTop /> {/* Ensures the page scrolls to the top on route change */}
       <Routes>
         <Route
-    path="/"
-    element={
-      <main role="main">
-        <section id="home" aria-label="Homepage">
-          <Home />
-        </section>
+  path="/"
+  element={
+    <main role="main">
+      <section id="home" aria-label="Homepage">
+        <Home />
+      </section>
 
-        <section id="services" style={{ paddingTop: "90px" }} aria-label="Services">
-          <Services />
-        </section>
+      <section id="services" style={{ paddingTop: "90px" }} aria-label="Services">
+        <Services />
+      </section>
 
-        <section id="trainers" style={{ paddingTop: "90px" }} aria-label="Trainers">
-          <Trainers />
-        </section>
+      <section id="trainers" style={{ paddingTop: "90px" }} aria-label="Trainers">
+        <Trainers />
+      </section>
 
-        <section id="testimonials" style={{ paddingTop: "90px" }} aria-label="Testimonials">
-          <Testimonials />
-        </section>
+      <section id="testimonials" style={{ paddingTop: "90px" }} aria-label="Testimonials">
+        <Testimonials />
+      </section>
 
-        <section id="faqs" style={{ paddingTop: "90px" }} aria-label="FAQs">
-          <FAQs />
-        </section>
+      <section id="faqs" style={{ paddingTop: "90px" }} aria-label="FAQs">
+        <FAQs />
+      </section>
 
-        <section id="about" style={{ paddingTop: "90px" }} aria-label="About Us">
-          <About />
-        </section>
+      <section id="about" style={{ paddingTop: "90px" }} aria-label="About Us">
+        <About />
+      </section>
 
-        <section id="contact" style={{ paddingTop: "90px" }} aria-label="Contact">
-          <Contact />
-        </section>
-      </main>
-      }
-      />
+      <section id="contact" style={{ paddingTop: "90px" }} aria-label="Contact">
+        <Contact />
+      </section>
+    </main>
+  }
+  />
 
            {/* 🔹 Trainer profile page */}
           <Route path="/trainer/:id" element={<TrainerProfile />} />
