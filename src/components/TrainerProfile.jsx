@@ -153,47 +153,72 @@ export default function TrainerProfile() {
       </section>
 
       {/* ── ABOUT ── */}
-      <section style={{ background: "#fff", padding: "96px 24px" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-          <div style={{ display: "flex", gap: "64px", flexWrap: "wrap", alignItems: "flex-start" }}>
+<section style={{ background: "#fff", padding: "96px 24px" }}>
+  <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+    
+    {/* Centered title */}
+    <FadeIn delay={0}>
+      <div style={{ textAlign: "center", marginBottom: "56px" }}>
+        <span style={{ color: "#33BFA3", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.14em", textTransform: "uppercase" }}>About Dr. Fareed</span>
+        <h2 style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 800, color: "#172B4D", margin: "12px 0 0", lineHeight: 1.2 }}>
+          Shaping Futures Through<br />
+          <span style={{ color: "#234292" }}>Academic Excellence</span>
+        </h2>
+      </div>
+    </FadeIn>
 
-            <FadeIn className="" style={{ flex: "1 1 420px" }} delay={0}>
-              <div style={{ flex: "1 1 420px" }}>
-                <span style={{ color: "#33BFA3", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.14em", textTransform: "uppercase" }}>About Dr. Fareed</span>
-                <h2 style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 800, color: "#172B4D", margin: "12px 0 20px", lineHeight: 1.2 }}>
-                  Shaping Futures Through<br />
-                  <span style={{ color: "#234292" }}>Academic Excellence</span>
-                </h2>
-                <p style={{ color: "#3A4A66", lineHeight: 1.85, fontSize: "1rem", marginBottom: "20px" }}>
-                  Dr. Abdul Fareed Brohi is an accomplished academic, researcher, and trainer with extensive experience in teaching and training. Currently serving as an IELTS Trainer at WisKnowledge Consultancy and International Islamic University Islamabad (IIUI), he has contributed significantly to teaching, research, curriculum development, workshops, and international educational forums.
-                </p>
-                <p style={{ color: "#3A4A66", lineHeight: 1.85, fontSize: "1rem" }}>
-                  He has authored books, edited children's literature, and published research in reputable journals — bringing a rare blend of academic depth and practical training mastery.
-                </p>
-                <div style={{ display: "flex", gap: "12px", marginTop: "28px", flexWrap: "wrap" }}>
-                  {["🇺🇸 USA", "🇹🇷 Turkey", "🇧🇭 Bahrain"].map((c, i) => (
-                    <span key={i} style={{ background: "#E6F0FF", color: "#234292", borderRadius: "8px", padding: "8px 16px", fontSize: "0.88rem", fontWeight: 600 }}>{c}</span>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
+    {/* Two columns: text + bigger stats boxes */}
+    <div style={{ display: "flex", gap: "64px", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
 
-            {/* Stats grid */}
-            <FadeIn delay={0.2} className="">
-              <div style={{ flex: "1 1 340px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px" }}>
-                {stats.map((s, i) => (
-                  <div key={i} style={{ background: "linear-gradient(135deg, #E6F0FF 0%, #f0f7ff 100%)", border: "1.5px solid #c8d9f5", borderRadius: "18px", padding: "28px 24px", textAlign: "center", transition: "transform 0.25s, box-shadow 0.25s", cursor: "default" }}
-                    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-5px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(35,66,146,0.12)"; }}
-                    onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
-                    <div style={{ fontSize: "2rem", fontWeight: 800, color: "#234292" }}>{s.value}</div>
-                    <div style={{ color: "#3A4A66", fontSize: "0.82rem", fontWeight: 600, marginTop: "4px" }}>{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
+      {/* Left: Text content */}
+      <FadeIn delay={0.1} style={{ flex: "1 1 420px" }}>
+        <div>
+          <p style={{ color: "#3A4A66", lineHeight: 1.85, fontSize: "1rem", marginBottom: "20px" }}>
+            Dr. Abdul Fareed Brohi is an accomplished academic, researcher, and trainer with extensive experience in teaching and training. Currently serving as an IELTS Trainer at WisKnowledge Consultancy and International Islamic University Islamabad (IIUI), he has contributed significantly to teaching, research, curriculum development, workshops, and international educational forums.
+          </p>
+          <p style={{ color: "#3A4A66", lineHeight: 1.85, fontSize: "1rem", marginBottom: "28px" }}>
+            He has authored books, edited children's literature, and published research in reputable journals — bringing a rare blend of academic depth and practical training mastery.
+          </p>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+            {["🇺🇸 USA", "🇹🇷 Turkey", "🇧🇭 Bahrain"].map((c, i) => (
+              <span key={i} style={{ background: "#E6F0FF", color: "#234292", borderRadius: "8px", padding: "8px 16px", fontSize: "0.88rem", fontWeight: 600 }}>{c}</span>
+            ))}
           </div>
         </div>
-      </section>
+      </FadeIn>
+
+      {/* Right: Bigger stats boxes */}
+      <FadeIn delay={0.2} style={{ flex: "1 1 420px", display: "flex", justifyContent: "center" }}>
+        <div style={{ 
+          display: "grid", 
+          gridTemplateColumns: "1fr 1fr", 
+          gap: "28px", 
+          maxWidth: "480px", 
+          width: "100%", 
+          margin: "0 auto" 
+        }}>
+          {stats.map((s, i) => (
+            <div key={i} style={{ 
+              background: "linear-gradient(135deg, #E6F0FF 0%, #f0f7ff 100%)", 
+              border: "1.5px solid #c8d9f5", 
+              borderRadius: "24px", 
+              padding: "36px 24px", 
+              textAlign: "center", 
+              transition: "transform 0.25s, box-shadow 0.25s", 
+              cursor: "default",
+              minWidth: "160px"
+            }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-5px)"; e.currentTarget.style.boxShadow = "0 20px 48px rgba(35,66,146,0.15)"; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
+              <div style={{ fontSize: "2.4rem", fontWeight: 800, color: "#234292", marginBottom: "8px" }}>{s.value}</div>
+              <div style={{ color: "#3A4A66", fontSize: "0.9rem", fontWeight: 600, lineHeight: 1.5 }}>{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </FadeIn>
+    </div>
+  </div>
+</section>
 
       {/* ── EXPERTISE ── */}
       <section style={{ background: "#F7FAFF", padding: "96px 24px" }}>
@@ -211,7 +236,7 @@ export default function TrainerProfile() {
             {expertiseItems.map((item, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div style={{ background: "#fff", border: "1.5px solid #e0eafc", borderRadius: "20px", padding: "32px 28px", transition: "all 0.3s ease", cursor: "default", height: "100%" }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 20px 48px rgba(35,66,146,0.12)"; e.currentTarget.style.borderColor = "#33BFA3"; }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 20px 48px rgba(35,66,146,0.12)"; e.currentTarget.style.borderColor = "#234292"; }}
                   onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = "#e0eafc"; }}>
                   <div style={{ width: "52px", height: "52px", background: "linear-gradient(135deg, #E6F0FF, #d4e5ff)", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.5rem", marginBottom: "18px" }}>{item.icon}</div>
                   <h3 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#172B4D", marginBottom: "10px" }}>{item.title}</h3>
@@ -222,7 +247,7 @@ export default function TrainerProfile() {
           </div>
         </div>
       </section>
-
+      
       {/* ── ACHIEVEMENTS ── */}
       <section id="achievements" style={{ background: "#fff", padding: "96px 24px" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
