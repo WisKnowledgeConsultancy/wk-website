@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -14,6 +15,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import AOSRefresher from "./components/AOSRefresher"; 
+import TrainerProfile from "./components/TrainerProfile"; // ✅ add
 
 function App() {
   useEffect(() => {
@@ -27,7 +29,10 @@ function App() {
   return (
     <div className="main-bg" role="document">
       <Navbar />
-
+      <Routes>
+        <Route
+    path="/"
+    element={
       <main role="main">
         <section id="home" aria-label="Homepage">
           <Home />
@@ -57,6 +62,12 @@ function App() {
           <Contact />
         </section>
       </main>
+      }
+      />
+
+           {/* 🔹 Trainer profile page */}
+          <Route path="/trainer/:id" element={<TrainerProfile />} />
+        </Routes>
 
       <Footer />
 
