@@ -1,152 +1,140 @@
-import React, { useEffect } from "react";
-import { FaCalendarAlt, FaChalkboardTeacher, FaBook, FaChild } from "react-icons/fa";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "./Services.css";
+import { useState } from "react";
+import "./Services.css"; // We'll use the existing CSS
 
-const formLink = "https://forms.gle/ZxfQqUs7SpBwBJ4L6";
+const ServicesSection = () => {
+  const [activeTab, setActiveTab] = useState("ielts");
 
-const services = [
-  {
-    title: "IELTS Coaching",
-    description: "IELTS coaching focused on Listening, Reading, Writing, and Speaking.",
-    duration: "P4W",
-    days: "Mon – Thu",
-    price: "200",
-    discount: "50% for IIUI Community",
-    icon: <FaBook aria-hidden="true" />,
-  },
-  {
-    title: "Spoken English",
-    description: "Improve fluency, vocabulary, and pronunciation with conversation practice.",
-    duration: "P90D", 
-    days: "Mon – Thu",
-    price: "300",
-    discount: "50% for IIUI Community",
-    icon: <FaChalkboardTeacher aria-hidden="true" />,
-  },
-  {
-    title: "Strategic Study Management Workshop",
-    description: "Workshop teaching planning, note-taking, active recall, and exam strategy.",
-    duration: "P2D", 
-    days: null,
-    price: "100",
-    discount: "50% for IIUI Community",
-    icon: <FaCalendarAlt aria-hidden="true" />,
-  },
-  {
-    title: "Strategic Summer Camp for Kids",
-    description: "Fun, safe summer program with workshops, creativity labs, and sports.",
-    duration: "P3W", 
-    days: "June, July",
-    price: "250",
-    discount: "50% for IIUI Community",
-    icon: <FaChild aria-hidden="true" />,
-  },
-];
+  const tabs = [
+    { id: "ielts", label: "IELTS" },
+    { id: "spoken", label: "SPOKEN ENGLISH" },
+    { id: "abroad", label: "STUDY ABROAD" },
+    { id: "summer", label: "SUMMER CAMP" }
+  ];
 
-export default function Services() {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
-
-  const provider = {
-    "@type": "Organization",
-    name: "WisKnowledge Academy",
-    url: "https://wisknowledge.com/",
+  const servicesData = {
+    ielts: {
+      title: "IELTS",
+      subDescription: "Master IELTS with Expert Guidance & Smart Learning",
+      mainDescription: "At WisKnowledge Consultancy, our IELTS preparation program is designed to help students achieve their target band scores through structured learning, certified trainers, mock evaluations, and personalized strategies. We focus on all four modules: Listening, Reading, Writing, and Speaking, with practical techniques, real exam practice, and confidence-building sessions to maximize performance in both Academic and General IELTS.",
+      highlight: "We don't just prepare students for IELTS, we prepare them for global opportunities.",
+      formLink: "https://forms.gle/USsMgQDFvMHWPa5H6",
+      features: [
+        { title: "Expert IELTS Trainers", desc: "Certified instructors providing personalized guidance, proven exam techniques, and one-on-one support for higher band achievement." },
+        { title: "Free IDP Mock Test Support", desc: "As a referral partner of IDP IELTS, we provide free mock tests and speaking practice sessions to help students assess their performance before the actual exam and avoid unnecessary test costs." },
+        { title: "Flexible Learning Modes", desc: "Morning, evening, and online classes designed for students, professionals, and busy learners." },
+        { title: "Result-Oriented Preparation", desc: "Focused practice sessions, band improvement strategies, and performance analytics to help students achieve their desired scores confidently." }
+      ]
+    },
+    spoken: {
+      title: "SPOKEN ENGLISH",
+      subDescription: "Build Confidence Through Practical English Communication",
+      mainDescription: "Our Spoken English program helps learners improve fluency, pronunciation, vocabulary, and everyday communication skills through interactive activities and real-life speaking practice. Whether for academics, interviews, presentations, or professional growth, we create a supportive learning environment that develops confidence and effective communication abilities.",
+      highlight: "We transform hesitation into confident communication.",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSezqTIA5IViAN01ha5H4_RDzOnI-4t1UGnwyIaiyLBbTUwj2w/viewform?usp=spoken",
+      features: [
+        { title: "Interactive Speaking Sessions", desc: "Engaging discussions, presentations, and conversation activities that improve real-world communication skills." },
+        { title: "Fluency & Pronunciation Training", desc: "Focused exercises to improve accent clarity, pronunciation, confidence, and speaking flow." },
+        { title: "Professional Communication Skills", desc: "Training for interviews, workplace communication, public speaking, and professional interactions." },
+        { title: "Beginner to Advanced Levels", desc: "Structured learning plans suitable for students, professionals, and learners at every proficiency level." }
+      ]
+    },
+    abroad: {
+      title: "STUDY ABROAD CONSULTANCY",
+      subDescription: "Your Gateway to International Education & Career Success",
+      mainDescription: "WisKnowledge Consultancy provides professional study abroad guidance for students aiming to pursue higher education internationally. From university selection and assistance to SOP writing, visa processing, interview preparation, and complete application support, we guide students through every stage of their journey with transparency, professionalism, and personalized counseling.",
+      highlight: "We guide students beyond admissions, towards successful international futures.",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSezqTIA5IViAN01ha5H4_RDzOnI-4t1UGnwyIaiyLBbTUwj2w/viewform?usp=abroad",
+      features: [
+        { title: "University & Course Selection", desc: "Personalized counseling to identify the best universities, programs, and countries based on student goals." },
+        { title: "Transparent Process & Student Guidance", desc: "We maintain complete transparency at every step of the study abroad process by providing honest guidance, regular updates, personalized counseling, and dedicated support throughout applications, documentation, visa procedures, and final admissions." },
+        { title: "Visa & Documentation Support", desc: "Professional assistance for visa filing, documentation, SOPs, interview preparation, and application processes." },
+        { title: "End-to-End Student Guidance", desc: "Complete support from career counseling to pre-departure preparation for a smooth international transition." }
+      ]
+    },
+    summer: {
+      title: "SUMMER CAMP",
+      subDescription: "Creative Learning & Skill Development for Future Leaders",
+      mainDescription: "Our Summer Camp programs are designed to combine education, creativity, confidence-building, and practical learning in an engaging environment. Students participate in interactive workshops, communication activities, leadership exercises, and skill-based sessions that encourage personal growth, teamwork, and innovation.",
+      highlight: "Learning becomes exciting when creativity, confidence, and innovation come together.",
+      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSezqTIA5IViAN01ha5H4_RDzOnI-4t1UGnwyIaiyLBbTUwj2w/viewform?usp=summer",
+      features: [
+        { title: "Personality Development Activities", desc: "Confidence-building exercises, communication sessions, and leadership activities for student growth." },
+        { title: "Creative & Interactive Learning", desc: "Hands-on projects, group tasks, games, and practical workshops that make learning engaging and enjoyable." },
+        { title: "Technology & Innovation Exposure", desc: "Sessions focused on digital skills, creativity, AI awareness, and modern learning approaches." },
+        { title: "Fun, Learning & Teamwork", desc: "A balanced environment combining educational activities, creativity, collaboration, and enjoyable experiences." }
+      ]
+    }
   };
 
-  const slugify = (str) =>
-    str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-
-  const courseNodes = services.map((s) => {
-    const id = `https://wisknowledge.com/#course-${slugify(s.title)}`;
-    return {
-      "@type": "Course",
-      "@id": id,
-      name: s.title,
-      description: s.description,
-      provider,
-      url: "https://wisknowledge.com/#services",
-      offers: {
-        "@type": "Offer",
-        price: s.price,
-        priceCurrency: "PKR",
-        url: formLink,
-        availability: "https://schema.org/InStock",
-        category: "Education", 
-      },
-      hasCourseInstance: {
-        "@type": "CourseInstance",
-        name: `${s.title} - Session`,
-        description: s.description,
-        courseMode: "Onsite",
-        timeRequired: s.duration,
-        schedule: {
-          "@type": "Schedule",
-          repeatFrequency: s.days || "Flexible",
-        },
-        location: {
-          "@type": "Place",
-          name: "WisKnowledge Academy",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Islamabad",
-            addressCountry: "PK",
-          },
-        },
-      },
-    };
-  });
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [...courseNodes],
-  };
+  const current = servicesData[activeTab];
 
   return (
     <section className="services-wrapper" id="services">
+      {/* Section Header */}
       <div className="services-intro">
-        <h2 className="services-heading" data-aos="fade-down">
-          Shape Your Future with Confidence
+        <span className="services-badge">What We Offer</span>
+        <h2 className="services-heading-new">
+          Our <span className="services-heading-highlight">Premium Services</span>
         </h2>
-        <p className="services-subheading" data-aos="fade-up">
-          Join programs that empower you with real skills, global language fluency, and a mindset for success.
-        </p>
       </div>
 
-      <div className="services-container">
-        {services.map((service, index) => (
-          <article
-            className="service-box"
-            key={index}
-            data-aos="fade-up"
-            data-aos-delay={index * 150}
-          >
-            <div className="icon-circle">{service.icon}</div>
-            <h3 className="service-title">{service.title}</h3>
-            <ul className="service-details">
-              <li><strong>Duration:</strong> {service.duration.replace("P","").toLowerCase()}</li>
-              {service.days && <li><strong>Days:</strong> {service.days}</li>}
-              <li><strong>Discount:</strong> {service.discount}</li>
-            </ul>
-            <a
-              href={formLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="service-btn"
+      {/* Card container */}
+      <div className="services-card-container">
+        {/* Tabs */}
+        <div className="services-tabs">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`tab-button ${activeTab === tab.id ? 'tab-button-active' : ''}`}
             >
-              Get Started
-            </a>
-          </article>
-        ))}
-      </div>
+              {tab.label}
+            </button>
+          ))}
+        </div>
 
-      {/* JSON-LD schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+        {/* Tab Content */}
+        <div className="services-tab-content">
+          <div className="services-tab-grid">
+            
+            {/* Left Column */}
+            <div className="services-left-col">
+              <div className="service-category-tag">{current.title}</div>
+              <h3 className="service-subheading-title">{current.subDescription}</h3>
+              <p className="service-main-description">{current.mainDescription}</p>
+              <div className="service-divider"></div>
+              
+              {/* Highlight Quote */}
+              <div className="service-highlight">
+                ✦ {current.highlight}
+              </div>
+
+              {/* Register Now Button - Update it with correct form link */}
+              <a
+                href={current.formLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="service-btn"
+                style={{ display: "inline-flex", alignItems: "center", gap: "10px" }}
+              >
+                Register Now <span>→</span>
+              </a>
+            </div>
+
+            {/* Right Column - Feature Cards */}
+            <div className="services-right-col">
+              {current.features.map((feature, idx) => (
+                <div key={idx} className="service-feature-card">
+                  <h4 className="service-feature-title">{feature.title}</h4>
+                  <p className="service-feature-description">{feature.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
-}
+};
+
+export default ServicesSection;
