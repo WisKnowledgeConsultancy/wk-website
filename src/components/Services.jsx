@@ -30,7 +30,7 @@ const ServicesSection = () => {
       subDescription: "Build Confidence Through Practical English Communication",
       mainDescription: "Our Spoken English program helps learners improve fluency, pronunciation, vocabulary, and everyday communication skills through interactive activities and real-life speaking practice. Whether for academics, interviews, presentations, or professional growth, we create a supportive learning environment that develops confidence and effective communication abilities.",
       highlight: "We transform hesitation into confident communication.",
-      formLink: "https://docs.google.com/forms/d/e/1FAIpQLSezqTIA5IViAN01ha5H4_RDzOnI-4t1UGnwyIaiyLBbTUwj2w/viewform?usp=spoken",
+      formLink: "https://forms.gle/S4CKQTwFqmozdiVa9",
       features: [
         { title: "Interactive Speaking Sessions", desc: "Engaging discussions, presentations, and conversation activities that improve real-world communication skills." },
         { title: "Fluency & Pronunciation Training", desc: "Focused exercises to improve accent clarity, pronunciation, confidence, and speaking flow." },
@@ -109,16 +109,28 @@ const ServicesSection = () => {
                 ✦ {current.highlight}
               </div>
 
-              {/* Register Now Button - Update it with correct form link */}
-              <a
-                href={current.formLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="service-btn"
-                style={{ display: "inline-flex", alignItems: "center", gap: "10px" }}
-              >
-                Register Now <span>→</span>
-              </a>
+              {/* Action Button */}
+              {(activeTab === "ielts" || activeTab === "spoken") ? (
+                <a
+                  href={current.formLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="service-btn"
+                  style={{ display: "inline-flex", alignItems: "center", gap: "10px" }}
+                >
+                  Register Now <span>→</span>
+                </a>
+              ) : (
+                <a
+                  href="https://wa.me/923369859980"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="service-btn"
+                  style={{ display: "inline-flex", alignItems: "center", gap: "10px" }}
+                >
+                  Learn More <span>→</span>
+                </a>
+              )}
             </div>
 
             {/* Right Column - Feature Cards */}

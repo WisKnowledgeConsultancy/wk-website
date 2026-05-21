@@ -7,8 +7,8 @@ import { Helmet } from "react-helmet-async";
 const testimonials = [
   {
     message:
-      "Scored 6.5 in IELTS and secured XYZ University admission—thanks WisKnowledge!",
-    name: "Student",
+    "I took IELTS classes and had a really positive experience. The guidance was clear, the lessons were well-structured, and Sr.fareed Brohi was very supportive throughout the journey. They helped me improve my speaking, writing, listening, and reading skills with useful strategies and regular practice. Highly recommended for anyone preparing for IELTS!",
+    name: "Aleena Fatima",
   },
   {
     message:
@@ -17,8 +17,8 @@ const testimonials = [
   },
   {
     message:
-      "Got my student visa through their consultancy. Got 7 band in IELTS. Very supportive team!",
-    name: "Student",
+      "I attended IELTS classes in July 2025 with Dr. Fareed Brohi at WisKnowledge Consultancy, Business Incubation Center at International Islamic University for preparation of the test. My aim was to get 8 Band each part of IELTS, which was unachievable according to many. However, Dr. Fareed boosted my moral by providing key points to prepare effectively. Overall, I am very satisfied by the command Dr. Fareed showed in his teaching and language skills as with help of his key insights to prepare and attempt IELTS to achieve 6 or higher band. I got 8.5 in my IELTS test",
+    name: "Umair Hafeez",
   },
 ];
 
