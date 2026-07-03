@@ -74,7 +74,6 @@
 // }
 
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom"; // ✅ added
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Trainers.css";
@@ -101,55 +100,6 @@ export default function Trainers() {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  return (
-    <section
-      className="trainers-section"
-      id="trainers"
-      aria-labelledby="trainers-heading"
-    >
-      <div className="trainers-container">
-        <header className="trainers-intro" data-aos="fade-up">
-          <h2 id="trainers-heading">Meet Our Trainers</h2>
-          <p>
-            Our trainers are mentors, innovators, and lifelong educators. Learn
-            from experts who are passionate about your growth and success.
-          </p>
-        </header>
-
-        <div className="trainers-grid">
-          {trainers.map((trainer, index) => (
-            <Link
-              to={`/trainer/${index}`}   // ✅ added
-              key={index}
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <article
-                className="trainer-card"
-                data-aos="fade-up"
-                data-aos-delay={index * 150}
-                itemScope
-                itemType="https://schema.org/Person"
-              >
-                <img
-                  src={trainer.image}
-                  alt={`Portrait of ${trainer.name}`}
-                  className="trainer-img"
-                  itemProp="image"
-                />
-                <h3 className="trainer-name" itemProp="name">
-                  {trainer.name}
-                </h3>
-                <p className="trainer-role" itemProp="jobTitle">
-                  {trainer.title}
-                </p>
-                <p className="trainer-desc" itemProp="description">
-                  {trainer.description}
-                </p>
-              </article>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  return null; // Trainers section is hidden because navigation opens the trainer profile directly.
 }
+

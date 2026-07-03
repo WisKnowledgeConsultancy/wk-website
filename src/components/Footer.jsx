@@ -39,7 +39,7 @@ export default function Footer() {
           </address>
           <nav className="footer-social" aria-label="Social Media Links">
             <a
-              href="https://www.facebook.com/profile.php?id=100090947373976"
+              href="https://www.facebook.com/WisKConsultancy/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit our Facebook page"
@@ -47,7 +47,7 @@ export default function Footer() {
               <FaFacebookF />
             </a>
             <a
-              href="https://www.instagram.com/wisknowledge_consultancy"
+              href="https://www.instagram.com/_wisknowledgeconsultancy/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit our Instagram profile"

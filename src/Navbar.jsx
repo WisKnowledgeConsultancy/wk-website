@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -45,7 +46,7 @@ const Navbar = () => {
         >
           <a href="/#home" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="/#services" onClick={() => setMenuOpen(false)}>Services</a>
-          <a href="/#trainers" onClick={() => setMenuOpen(false)}>Trainers</a>
+          <Link to="/trainer/0" onClick={() => setMenuOpen(false)}>Trainers</Link>
           <a href="/#testimonials" onClick={() => setMenuOpen(false)}>Testimonials</a>
           <a href="/#faqs" onClick={() => setMenuOpen(false)}>FAQs</a>
           <a href="/#about" onClick={() => setMenuOpen(false)}>About</a>
