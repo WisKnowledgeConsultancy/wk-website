@@ -49,6 +49,7 @@ const Navbar = () => {
           <Link to="/trainer/0" onClick={() => setMenuOpen(false)}>Trainers</Link>
           <a href="/#testimonials" onClick={() => setMenuOpen(false)}>Testimonials</a>
           <a href="/#faqs" onClick={() => setMenuOpen(false)}>FAQs</a>
+          <Link to="/blogs" onClick={() => setMenuOpen(false)}>Blogs</Link>
           <a href="/#about" onClick={() => setMenuOpen(false)}>About</a>
           <a href="/#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>

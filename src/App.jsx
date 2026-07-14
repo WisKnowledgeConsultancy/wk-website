@@ -17,6 +17,8 @@ import Footer from "./components/Footer";
 import AOSRefresher from "./components/AOSRefresher"; 
 import TrainerProfile from "./components/TrainerProfile"; // ✅ add
 import ScrollToTop from "./components/ScrollToTop"; // ✅ add
+import Blogs from "./pages/Blogs";
+import BlogPost from "./pages/BlogPost";
 
 function App() {
   useEffect(() => {
@@ -69,6 +71,8 @@ function App() {
 
            {/* 🔹 Trainer profile page */}
           <Route path="/trainer/:id" element={<TrainerProfile />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogPost />} />
         </Routes>
 
       <Footer />
